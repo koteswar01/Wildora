@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="donate-page">
+  <h2>Donate Now</h2>
+  <p class="intro">
+    We are grateful to supporters—from passionate individuals to global organizations—who help us care for animals, build enclosures, produce educational materials, and employ dedicated staff. Join us in protecting wildlife!
+  </p>
+
+  <form class="donation-form" method="POST" action="/donate">
+    <label for="amount">Donation Amount</label>
+    <div class="currency-select">
+      <select name="currency" id="currency">
+        <option value="INR">₹ (India)</option>
+        <option value="USD">$ (USA)</option>
+        <option value="GBP">£ (UK)</option>
+        <option value="EUR">€ (Euro)</option>
+        <!-- Add more currencies here -->
+      </select>
+      <input type="number" name="amount" id="amount" placeholder="2500" required min="1">
+    </div>
+
+    <label for="cause">Choose a Cause</label>
+    <select name="cause" id="cause">
+      <option value="">-- Select a cause --</option>
+      <option value="feeding">Daily Feeding Costs</option>
+      <option value="conservation">Conservation Programs</option>
+      <option value="education">Education & Awareness</option>
+    </select>
+
+    <button type="submit" class="btn donate-btn">Donate</button>
+  </form>
+
+  <div class="info-text">
+    <h3>Tax Benefit: 50% under Section 80G (India)</h3>
+    <p>Please contact us at <a href="mailto:info@wildora.org">info@wildora.org</a> for foreign transfers.</p>
+  </div>
+</section>
+{% endblock %}
