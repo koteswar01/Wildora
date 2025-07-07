@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Madras Crocodile Bank Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+    <div class="topbar">
+            <a href="#">🛍️ Croc Shop</a>
+            <a href="#">▶️ YouTube Videos</a>
+            <a href="#">📸 Snakebite Donation</a>
+            <a href="#">🦎 Adopt a Reptile</a>
+        </div>
+
+        <div class="title">
+      <h1>The Madras Crocodile Bank Trust</h1>
+      <p>Centre for Herpetology</p>
+    </div>
+  </div>
+
+        <div class="navbar">
+            <nav>
+                <a href="/">Home</a>
+
+                <div class="dropdown">
+                    <span class="dropdown-toggle">About Us</span>
+                    <div class="dropdown-menu">
+                        <a href="/about#history">History</a>
+                        <a href="/about#chronology">Chronology</a>
+                        <a href="/about#birds">Birds At Croc Bank</a>
+                        <a href="/about#reptiles">Free Ranging Reptiles</a>
+                        <a href="/about#staff">Meet The Staff</a>
+                        <a href="/about#trustees">Meet the Trustees</a>
+                    </div>
+                </div>
+
+                <a href="/conservation">Conservation & Research</a>
+                <a href="/support">Education & Awareness</a>
+                <a href="/events">Engage with Us</a>
+                <a href="/visit">Visit Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/donate">💛 Donate</a>
+            </nav>
+            
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>&copy; 2025 Madras Crocodile Bank Trust</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
