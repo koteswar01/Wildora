@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="about-hero">
+    <h1>About the Madras Crocodile Bank Trust</h1>
+    <p>A leading institution for reptile conservation, research, and education since 1976.</p>
+</div>
+
+<section class="about-section">
+    <h2>Our Mission</h2>
+    <p>
+        The Madras Crocodile Bank Trust (MCBT) is dedicated to the conservation of reptiles and amphibians...
+    </p>
+</section>
+
+<section class="about-section accordion">
+    <h2>Explore Our Story</h2>
+
+    <!-- Accordion Item: History -->
+    <div class="accordion-item" id="history">
+        <h3><button class="accordion-toggle">📜 History</button></h3>
+        <div class="accordion-content">
+            <p>Founded in 1976 by herpetologist Romulus Whitaker and his wife Zai Whitaker...</p>
+            <p>The Bank was initially envisioned as a captive breeding center...</p>
+            <p>Located on the scenic East Coast Road south of Chennai...</p>
+            <p>In 1993, acknowledging its broader conservation role...</p>
+            <p>Today, the Croc Bank is home to 15 species of crocodilians...</p>
+            <p>As a hybrid conservation facility, zoo, and research center...</p>
+        </div>
+    </div>
+
+    <!-- Accordion Item: Chronology -->
+    <div class="accordion-item" id="chronology">
+        <h3><button class="accordion-toggle">📅 Chronology</button></h3>
+        <div class="accordion-content">
+            <ul class="timeline">
+                <li><strong>1972</strong> – Wildlife Protection Act enacted.</li>
+                <li><strong>1975</strong> – Indian Crocodile Conservation Project launched.</li>
+                <li><strong>1976</strong> – Madras Crocodile Bank founded.</li>
+                <li><strong>1981</strong> – Turtle conservation programs begin.</li>
+                <li><strong>1989</strong> – First successful gharial breeding.</li>
+                <li><strong>1993</strong> – Renamed to MCBT & Centre for Herpetology.</li>
+                <li><strong>2005</strong> – Agumbe Rainforest Research Station founded.</li>
+                <li><strong>2018</strong> – Romulus Whitaker receives Padma Shri.</li>
+                <li><strong>2024</strong> – Launch of 10-year strategic plan.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Accordion Item: Birds -->
+    <div class="accordion-item" id="birds">
+        <h3><button class="accordion-toggle">🐦 Birds at Croc Bank</button></h3>
+        <div class="accordion-content">
+            <h3>A Thriving Bird Sanctuary</h3>
+            <p>The Croc Bank isn’t just a reptile haven—it's also a paradise for birds.</p>
+            <p>Over <strong>60 species</strong> have been recorded here, including:</p>
+            <ul>
+                <li>Blue-tailed Bee-eater</li>
+                <li>Great Cormorant, Black-rumped Flameback</li>
+                <li>Asian Paradise Flycatcher, Shikra</li>
+                <li>Spot-billed Pelican, Small Pratincole</li>
+            </ul>
+            <p>Native vegetation like neem and tamarind supports roosting and nesting.</p>
+        </div>
+    </div>
+
+    <!-- Accordion Item: Reptiles -->
+    <div class="accordion-item" id="reptiles">
+        <h3><button class="accordion-toggle">🦎 Free‑Ranging Reptiles</button></h3>
+        <div class="accordion-content">
+            <h3>A Living Herpetofaunal Ecosystem</h3>
+            <p>Over <strong>35 species</strong> of wild reptiles and amphibians roam freely.</p>
+            <ul>
+                <li><strong>Snakes:</strong> Common Krait, Green Vine Snake</li>
+                <li><strong>Lizards:</strong> Skinks, Indian Chameleon</li>
+                <li><strong>Amphibians:</strong> Tree Frogs, Bullfrogs</li>
+            </ul>
+            <p>These species contribute to natural pest control and biodiversity.</p>
+        </div>
+    </div>
+
+    <!-- Accordion Item: Staff -->
+    <div class="accordion-item" id="staff">
+        <h3><button class="accordion-toggle">👥 Meet the Staff</button></h3>
+        <div class="accordion-content">
+            <h3>Dedicated Experts Behind the Scenes</h3>
+            <ul>
+                <li><strong>Herpetologists</strong> – Oversee research and breeding.</li>
+                <li><strong>Veterinarians</strong> – Ensure animal health.</li>
+                <li><strong>Education Team</strong> – Run tours and outreach.</li>
+                <li><strong>Animal Keepers & Interns</strong> – Daily care and support.</li>
+            </ul>
+            <p>All staff contribute to conservation, science, and public education.</p>
+        </div>
+    </div>
+
+    <!-- Accordion Item: Trustees -->
+    <div class="accordion-item" id="trustees">
+        <h3><button class="accordion-toggle">🧑‍⚖️ Meet the Trustees</button></h3>
+        <div class="accordion-content">
+            <h3>Guiding Visionaries Behind MCBT</h3>
+            <p>The Board of Trustees ensures transparency, strategic planning, and scientific integrity.</p>
+            <ul>
+                <li>Includes <strong>Romulus Whitaker</strong> and other global experts.</li>
+                <li>Oversees programs, policy, funding, and partnerships.</li>
+            </ul>
+            <p>They bring decades of conservation leadership to the organization.</p>
+        </div>
+    </div>
+</section>
+
+<!-- JS for Accordion -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const toggles = document.querySelectorAll(".accordion-toggle");
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener("click", () => {
+            const content = toggle.closest(".accordion-item").querySelector(".accordion-content");
+            const isOpen = content.classList.contains("open");
+
+            document.querySelectorAll(".accordion-content").forEach(c => c.classList.remove("open"));
+            document.querySelectorAll(".accordion-toggle").forEach(t => t.classList.remove("active"));
+
+            if (!isOpen) {
+                toggle.classList.add("active");
+                content.classList.add("open");
+            }
+        });
+    });
+
+    const hash = window.location.hash;
+    if (hash) {
+        const target = document.querySelector(hash);
+        if (target && target.classList.contains("accordion-item")) {
+            const button = target.querySelector(".accordion-toggle");
+            const content = target.querySelector(".accordion-content");
+
+            document.querySelectorAll(".accordion-content").forEach(c => c.classList.remove("open"));
+            document.querySelectorAll(".accordion-toggle").forEach(t => t.classList.remove("active"));
+
+            button.classList.add("active");
+            content.classList.add("open");
+
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }
+});
+</script>
+
+<!-- Basic Accordion CSS (adjust to your main stylesheet as needed) -->
+<style>
+.accordion .accordion-item {
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+}
+.accordion-toggle {
+    background: #eee;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.accordion-toggle.active {
+    background: #d3e8ff;
+    font-weight: bold;
+}
+.accordion-content {
+    display: none;
+    padding: 1rem;
+}
+.accordion-content.open {
+    display: block;
+}
+</style>
+
+{% endblock %}

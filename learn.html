@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="learn-section">
+  <div class="container">
+    <h1>Learn About Reptiles</h1>
+    <div class="fact-grid">
+      {% for fact in facts %}
+      <div class="fact-card">
+        <h2>{{ fact.title }}</h2>
+        <p>{{ fact.content }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

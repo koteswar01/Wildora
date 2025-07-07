@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section id="discover" class="discover-section">
+  <div class="container">
+    <h1>Discover Crocodiles and Reptiles</h1>
+    <p>Explore the fascinating world of reptiles including crocodiles, alligators, gharials, and more.</p>
+
+    <div class="species-grid">
+      {% for reptile in reptiles %}
+      <div class="species-card">
+        <img src="{{ url_for('static', filename='images/' ~ reptile.image) }}" alt="{{ reptile.name }}">
+        <h2>{{ reptile.name }}</h2>
+        <p>{{ reptile.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

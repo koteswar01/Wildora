@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="carousel">
+    <div class="slide active" style="background-image: url('/static/images/hero.jpg');">
+        <div class="hero-text">
+            <h2>The World of Reptiles</h2>
+            <a href="{{ url_for('discover') }}" class="btn btn-yellow">Discover</a>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('/static/images/slide2.jpg');">
+        <div class="hero-text">
+            <h2>Conservation in Action</h2>
+            <a href="/conservation">Learn More</a>
+        </div>
+    </div>
+    <div class="slide" style="background-image: url('/static/images/slide3.jpg');">
+        <div class="hero-text">
+            <h2>Support Us</h2>
+            <p>Help us protect endangered species through donations, volunteering, or symbolic adoption.</p>
+            <a href="#support-section" class="btn btn-yellow">Support Us</a>
+        </div>
+    </div>
+
+    <div class="carousel-controls">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+{% endblock %}

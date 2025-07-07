@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Support Us</h2>
+<ul>
+    {% for option in support_options %}
+    <li><strong>{{ option.method }}</strong>: {{ option.description }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
